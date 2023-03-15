@@ -1,39 +1,18 @@
-function verificar() {
+function carregar() {
+    var msg = window.document.getElementById('msg')
+    var img = window.document.getElementById('imagem')
     var data = new Date()
-    var ano = data.getFullYear()
-    var fano = document.getElementById('txtano')
-    var res = document.querySelector('div#res')
-    if (fano.value.lenght == 0 || Number(fano.value) > ano) {
-        window.alert('[ERRO] Verifique os dados inseridos e tente novamente')
+    var hora = 23
+    // var hora = data.getHours()
+    msg.innerHTML = `Agora são ${hora} horas!`
+    if (hora >=0 && hora < 12) {
+        //Bom dia!
+        img.src = 'manha.png'
+    } else if (hora >= 12 && hora < 18) {
+        //Boa tarde
+        img.src = 'tarde.png'
     } else {
-        var fsex = document.getElementsByName('radsex')
-        var idade = ano - Number(fano.value)
-        var genero = ''
-        if (fsex[0].checked) {
-            genero = 'Homem'
-            if (idade >=0 && idade < 10) {
-                //Criança
-            } else if (idade < 21) {
-                //Jovem
-
-            } else if (idade < 50) {
-                //Adulto
-            } else {
-                //Idoso
-            }
-        } else if (fsex[1].checked) {
-            genero = 'Mulher'
-            if (idade >=0 && idade < 10) {
-                //Criança
-            } else if (idade < 21) {
-                //Jovem
-            } else if (idade < 50) {
-                //Adulto
-            } else {
-                //Idoso
-            }
-        }
-        res.style.textAlign = 'center'
-        res.innerHTML = `Detectamos ${genero} com ${idade} anos!`
+        //Boa noite!
+        img.src = 'noite.png'
     }
 }
