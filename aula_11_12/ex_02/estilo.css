@@ -3,7 +3,8 @@ body {
     font: normal 15pt Arial;
 }
 header {
-
+    text-align: center;
+    color: white;
 }
 section {
     background: white;
